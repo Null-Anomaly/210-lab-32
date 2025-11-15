@@ -16,8 +16,19 @@ int main()
 
     Car car1;
     Car car2;
+    int rando = 0;
 
     deque<Car> speed = {car1,car2};
+
+    cout << "Initial queue:\n";
+    car1.print();
+    car2.print();
+
+    while(!speed.empty())
+    {
+        rando = rand() % 100 + 1;
+
+    }
 
     return 0;
 }
