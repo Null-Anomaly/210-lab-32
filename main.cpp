@@ -9,27 +9,33 @@ IDE used: VSC*/
 
 using namespace std;
 
-
+//Main function
 int main()
 {
+    //Randomization
     srand(time(NULL));
 
+    //Initial variable initialization
     Car car1;
     Car car2;
     int rando = 0;
+    int i = 1;
 
     deque<Car> speed = {car1,car2};
 
+    //Initial cars
     cout << "Initial queue:\n";
     car1.print();
     car2.print();
 
-    int i = 1;
+    //Goes until the line is empty, however long that takes.
     while(!speed.empty())
     {
         cout << "Time " << i << " Operation: ";
-        rando = rand() % 100 + 1;
-        if(rando >= 55)
+        rando = rand() % 100 + 1; //Randomized on each loop
+
+        //Branching paths
+        if(rando >= 55) //Removes a car that pays
         {
             Car temp = speed.front();
             cout << "Car paid: ";
@@ -37,7 +43,7 @@ int main()
             cout << "\n";
             speed.pop_front();
         }
-        else
+        else //Adds a car to the end of the line.
         {
             speed.resize(speed.size()+1);
             Car temp;
@@ -47,11 +53,15 @@ int main()
             temp.print();
         }
 
-        cout << "Queue\n";
+        //Prints out the queue after new car was added/removed
+        cout << "Queue:\n";
         for(int j = 0; j < speed.size(); j++)
         {
-            print(speed.begin());
+            Car temp = speed[j];
+            temp.print();
         }
+        cout << "\n";
+        i++;
     }
 
     return 0;
