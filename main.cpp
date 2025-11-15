@@ -35,10 +35,22 @@ int main()
             cout << "Car paid: ";
             temp.print();
             cout << "\n";
+            speed.pop_front();
         }
         else
         {
-            
+            speed.resize(speed.size()+1);
+            Car temp;
+            speed.push_back(temp);
+            cout << "Joined lane: ";
+            temp = speed.back();
+            temp.print();
+        }
+
+        cout << "Queue\n";
+        for(int j = 0; j < speed.size(); j++)
+        {
+            print(speed.begin());
         }
     }
 
