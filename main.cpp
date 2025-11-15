@@ -24,10 +24,22 @@ int main()
     car1.print();
     car2.print();
 
+    int i = 1;
     while(!speed.empty())
     {
+        cout << "Time " << i << " Operation: ";
         rando = rand() % 100 + 1;
-
+        if(rando >= 55)
+        {
+            Car temp = speed.front();
+            cout << "Car paid: ";
+            temp.print();
+            cout << "\n";
+        }
+        else
+        {
+            
+        }
     }
 
     return 0;
