@@ -14,7 +14,10 @@ int main()
 {
     srand(time(NULL));
 
-    deque<Car> speed;
+    Car car1;
+    Car car2;
+
+    deque<Car> speed = {car1,car2};
 
     return 0;
 }
