@@ -88,9 +88,49 @@ int main()
                     temp = vehicles[j].back();
                     temp.print();
                 }
-                else
+                else //Has a car switch lanes.
                 {
-                    
+                    //From Lane 1
+                    if(j = 0)
+                    {
+                        Car temp = vehicles[j].back();
+                        vehicles[j].pop_back();
+                        rando = rand() % 3;
+                        if(rando = 0)
+                        {
+                            vehicles[1].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
+                        if(rando = 1)
+                        {
+                            vehicles[2].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+
+                        }
+                        if(rando = 2)
+                        {
+                            vehicles[3].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
+                    }
+                    //From Lane 2
+                    if(j = 1)
+                    {
+
+                    }
+                    //From Lane 3
+                    if(j = 2)
+                    {
+
+                    }
+                    //From Lane 4
+                    if(j = 3)
+                    {
+
+                    }
                 }
 
             }
