@@ -1,10 +1,11 @@
-/*COMSC 210 | Lab 32 | Lawrence Bryant
+/*COMSC 210 | Lab 32/33 | Lawrence Bryant
 IDE used: VSC*/
 #include "Car.h"
 #include <deque>
 #include <stdlib.h>
 #include <random>
 #include <time.h>
+#include <array>
 #include <iostream>
 
 using namespace std;
@@ -21,7 +22,12 @@ int main()
     int rando = 0;
     int i = 1;
 
+    
     deque<Car> speed = {car1,car2};
+    deque<Car> speeed = {car1,car2};
+    deque<Car> spead = {car1,car2};
+    deque<Car> speid = {car1,car2};
+    array<deque<Car>,4> vehicles = {speed, speeed, spead, speid};
 
     //Initial cars
     cout << "Initial queue:\n";
