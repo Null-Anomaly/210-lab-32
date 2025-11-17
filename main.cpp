@@ -50,33 +50,43 @@ int main()
     while(!speed.empty() || !speeed.empty() || !spead.empty() || !speid.empty())
     {
         cout << "Time " << i << " Operation: ";
-        rando = rand() % 100 + 1; //Randomized on each loop
 
-        //Branching paths
-        if(rando >= 55) //Removes a car that pays
+
+        for(int j = 0; j < vehicles.size(); j++)
         {
-            Car temp = speed.front();
-            cout << "Car paid: ";
-            temp.print();
-            cout << "\n";
-            speed.pop_front();
+            rando = rand() % 100 + 1; //Randomized on each loop
+
+            //Branching paths
+            if(rando >= 10) //Removes a car that pays
+            {
+                Car temp = vehicles[j].front();
+                cout << "Car paid: ";
+                temp.print();
+                cout << "\n";
+                vehicles[j].pop_front();
+            }
+            else //Adds a car to the end of the line.
+            {
+                vehicles[j].resize(vehicles[j].size()+1);
+                Car temp;
+                vehicles[j].push_back(temp);
+                cout << "Joined lane: ";
+                temp = vehicles[j].back();
+                temp.print();
+            }
         }
-        else //Adds a car to the end of the line.
-        {
-            speed.resize(speed.size()+1);
-            Car temp;
-            speed.push_back(temp);
-            cout << "Joined lane: ";
-            temp = speed.back();
-            temp.print();
-        }
+        
+
 
         //Prints out the queue after new car was added/removed
         cout << "Queue:\n";
-        for(int j = 0; j < speed.size(); j++)
+        for(int j = 0; j < vehicles.size(); j++)
         {
-            Car temp = speed[j];
-            temp.print();
+            for(int k = 0; k < vehicles[j].size(); k++)
+            {
+                Car temp = vehicles[j][k];
+                temp.print();
+            }
         }
         cout << "\n";
         i++;
