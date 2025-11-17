@@ -19,20 +19,32 @@ int main()
     //Initial variable initialization
     Car car1;
     Car car2;
+    Car car3;
+    Car car4;
+    Car car5;
+    Car car6;
+    Car car7;
+    Car car8;
     int rando = 0;
     int i = 1;
 
     
     deque<Car> speed = {car1,car2};
-    deque<Car> speeed = {car1,car2};
-    deque<Car> spead = {car1,car2};
-    deque<Car> speid = {car1,car2};
+    deque<Car> speeed = {car3,car4};
+    deque<Car> spead = {car5,car6};
+    deque<Car> speid = {car7,car8};
     array<deque<Car>,4> vehicles = {speed, speeed, spead, speid};
 
     //Initial cars
     cout << "Initial queue:\n";
-    car1.print();
-    car2.print();
+    for(int j = 1; j < vehicles.size()+1;j++)
+    {
+        cout << "Lane " << j << ":\n    ";
+        vehicles[j-1].front().print();
+        cout << "\n";
+        vehicles[j-1].back().print();
+        cout << "\n";
+    }
 
     //Goes until the line is empty, however long that takes.
     while(!speed.empty())
