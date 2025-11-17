@@ -47,7 +47,7 @@ int main()
     }
 
     //Goes until the line is empty, however long that takes.
-    while(!speed.empty() || !speeed.empty() || !spead.empty() || !speid.empty())
+    while(!speed.empty() || !speeed.empty() || !spead.empty() || !speid.empty() && i <= 20)
     {
         cout << "Time " << i << " Operation: ";
 
@@ -119,16 +119,82 @@ int main()
                     //From Lane 2
                     if(j = 1)
                     {
+                        Car temp = vehicles[j].back();
+                        vehicles[j].pop_back();
+                        rando = rand() % 3;
+                        if(rando = 0)
+                        {
+                            vehicles[0].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
+                        if(rando = 1)
+                        {
+                            vehicles[2].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+
+                        }
+                        if(rando = 2)
+                        {
+                            vehicles[3].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
 
                     }
                     //From Lane 3
                     if(j = 2)
                     {
+                        Car temp = vehicles[j].back();
+                        vehicles[j].pop_back();
+                        rando = rand() % 3;
+                        if(rando = 0)
+                        {
+                            vehicles[0].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
+                        if(rando = 1)
+                        {
+                            vehicles[1].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+
+                        }
+                        if(rando = 2)
+                        {
+                            vehicles[3].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
 
                     }
                     //From Lane 4
                     if(j = 3)
                     {
+                        Car temp = vehicles[j].back();
+                        vehicles[j].pop_back();
+                        rando = rand() % 3;
+                        if(rando = 0)
+                        {
+                            vehicles[0].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
+                        if(rando = 1)
+                        {
+                            vehicles[1].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+
+                        }
+                        if(rando = 2)
+                        {
+                            vehicles[2].push_back(temp);
+                            cout << "Lane: " << j+1 << " Switched: ";
+                            temp.print();
+                        }
 
                     }
                 }
