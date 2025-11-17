@@ -57,36 +57,64 @@ int main()
             rando = rand() % 100 + 1; //Randomized on each loop
 
             //Branching paths
-            if(rando >= 10) //Removes a car that pays
+            //If the lane is empty.
+            if(vehicles[j].empty())
             {
-                Car temp = vehicles[j].front();
-                cout << "Car paid: ";
-                temp.print();
-                cout << "\n";
-                vehicles[j].pop_front();
+                if(rando >= 51)
+                {
+                    Car temp;
+                    vehicles[j].push_front(temp);
+                    cout << "\n";
+                    temp.print();
+                    cout << " joined lane" << j+1;
+                }
             }
-            else //Adds a car to the end of the line.
+            else
             {
-                vehicles[j].resize(vehicles[j].size()+1);
-                Car temp;
-                vehicles[j].push_back(temp);
-                cout << "Joined lane: ";
-                temp = vehicles[j].back();
-                temp.print();
+                if(rando <= 46) //Removes a car that pays
+                {
+                    Car temp = vehicles[j].front();
+                    cout << "Car paid: ";
+                    temp.print();
+                    cout << "\n";
+                    vehicles[j].pop_front();
+                }
+                else if(rando > 46 && rando < 85) //Adds a car to the end of the line.
+                {
+                    vehicles[j].resize(vehicles[j].size()+1);
+                    Car temp;
+                    vehicles[j].push_back(temp);
+                    cout << "Joined lane: ";
+                    temp = vehicles[j].back();
+                    temp.print();
+                }
+                else
+                {
+                    
+                }
+
             }
+
+    
         }
         
 
 
         //Prints out the queue after new car was added/removed
-        cout << "Queue:\n";
+        int l = 1;
         for(int j = 0; j < vehicles.size(); j++)
         {
+            cout << "Lane " << l <<"Queue: \n";
             for(int k = 0; k < vehicles[j].size(); k++)
             {
                 Car temp = vehicles[j][k];
                 temp.print();
+                if(vehicles[j].empty())
+                {
+                    cout << "empty";
+                }
             }
+            l++;
         }
         cout << "\n";
         i++;
