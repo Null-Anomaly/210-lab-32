@@ -41,13 +41,13 @@ int main()
     {
         cout << "Lane " << j << ":\n    ";
         vehicles[j-1].front().print();
-        cout << "\n";
+        cout << "\n    ";
         vehicles[j-1].back().print();
         cout << "\n";
     }
 
     //Goes until the line is empty, however long that takes.
-    while(!speed.empty())
+    while(!speed.empty() || !speeed.empty() || !spead.empty() || !speid.empty())
     {
         cout << "Time " << i << " Operation: ";
         rando = rand() % 100 + 1; //Randomized on each loop
